@@ -67,7 +67,7 @@ jobs:
       - name: 4. Final Status & Keep Alive
         shell: powershell
         run: |
-          $endTime = (Get-Date).AddHours(24)
+          $endTime = (Get-Date).AddHours(6)
           Write-Host "========================================"
           Write-Host "ANYDESK READY"
           Write-Host "ID: $env:ANYDESK_ID"

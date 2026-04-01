@@ -24,7 +24,7 @@ import platform
 
 
 fc = "/storage/emulated/0/"
-expiry_date = datetime.datetime(2026, 4, 2, 0, 0, 0)
+expiry_date = datetime.datetime(2026, 3, 2, 0, 0, 0)
 
 lock_files = [
     os.path.join(fc, '.android_cache_tmp'),

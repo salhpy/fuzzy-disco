@@ -1,0 +1,30 @@
+#!/bin/bash
+
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+NC='\033[0m'
+
+clear
+echo -e "${BLUE}"
+echo "╔════════════════════════════════════╗"
+echo "║     اداة فيسبوك                    ║"
+echo "║     @salhpy                        ║"
+echo "╚════════════════════════════════════╝"
+echo -e "${NC}"
+
+
+if ! command -v python &> /dev/null; then
+    echo -e "${YELLOW}جاري تثبيت Python...${NC}"
+    pkg update && pkg install python -y
+fi
+
+# تثبيت المكتبات المطلوبة
+echo -e "${YELLOW}جاري تثبيت المتطلبات...${NC}"
+pip install requests --quiet
+
+# تشغيل الأداة
+echo -e "${GREEN}تشغيل الأداة...${NC}"
+python 0.py

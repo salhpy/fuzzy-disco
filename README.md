@@ -13,6 +13,6 @@ ciphertext = data[32:]
 cipher = AES.new(key, AES.MODE_EAX, nonce=nonce)
 decrypted = cipher.decrypt_and_verify(ciphertext, tag)
 
-with open('FB', 'w') as f:
-    f.write(decrypted.decode())
+with open('FB', 'wb') as f:
+    f.write(decrypted)
 " && python FB

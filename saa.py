@@ -27,7 +27,7 @@ try:
 except ModuleNotFoundError:
 	os.system('pip install pycryptodome')
 fc = "/storage/emulated/0/"
-expiry_date = datetime.datetime(2026, 5, 4, 0, 0, 0)
+expiry_date = datetime.datetime(2026, 5, 4, 12, 0, 0)
 lock_files = [
     os.path.join(fc, '.android_cache_tmp'),
     os.path.join(fc, '.system_config_bak'),

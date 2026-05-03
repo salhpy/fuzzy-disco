@@ -1233,8 +1233,7 @@ def u():
 "[FBAN/FBIOS;FBAV/440.0.0.27.105;FBBV/648871539;FBDV/iPhone12,8;FBMD/iPhone;FBSN/iOS;FBSV/15.7.8;FBSS/3;FBID/phone;FBLC/it_IT;FBOP/5;FBRV/442893075]",
 "[FBAN/FBIOS;FBAV/493.0.0.55.216;FBBV/655387971;FBDV/iPhone9,2;FBMD/iPhone;FBSN/iOS;FBSV/16.7.10;FBSS/3;FBID/phone;FBLC/pt_PT;FBOP/5;FBRV/555896312]",
 "[FBAN/FBIOS;FBAV/501.0.0.49.107;FBBV/535390063;FBDV/iPhone14,7;FBMD/iPhone;FBSN/iOS;FBSV/17.6.1;FBSS/3;FBID/phone;FBLC/it_IT;FBOP/5;FBRV/360069197]",
-"[FBAN/FBIOS;FBAV/503.0.0.56.104;FBBV/268662775;FBDV/iPhone8,2;FBMD/iPhone;FBSN/iOS;FBSV/16.6.1;FBSS/3;FBID/phone;FBLC/pt_PT;FBOP/5;FBRV/693265393]",
-"[FBAN/FBIOS;FBAV/485.0.0.50.105;FBBV/673738382;FBDV/iPhone14,7;FBMD/iPhone;FBSN/iOS;FBSV/16.5.1;FBSS/3;FBID/phone;FBLC/it_IT;FBOP/5;FBRV/518765750]",
+"[FBAN/FBIOS;FBAV/503.0.0.56.104;FBBV/268662775;FBDV/iPhone8,2;FBMD/iPhone;FBSN/iOS;FBSV/16.6.1;FBSS/3;FBID/phone;FBLC/pt_PT;FBOP/5;FBRV/6932response"[FBAN/FBIOS;FBAV/485.0.0.50.105;FBBV/673738382;FBDV/iPhone14,7;FBMD/iPhone;FBSN/iOS;FBSV/16.5.1;FBSS/3;FBID/phone;FBLC/it_IT;FBOP/5;FBRV/518765750]",
 "[FBAN/FBIOS;FBAV/493.0.0.55.216;FBBV/264851680;FBDV/iPhone15,4;FBMD/iPhone;FBSN/iOS;FBSV/15.7.8;FBSS/3;FBID/phone;FBLC/pt_PT;FBOP/5;FBRV/130766141]",
 "[FBAN/FBIOS;FBAV/500.0.0.52.98;FBBV/541621040;FBDV/iPhone9,2;FBMD/iPhone;FBSN/iOS;FBSV/16.7.10;FBSS/3;FBID/phone;FBLC/fr_FR;FBOP/5;FBRV/139410956]",
 "[FBAN/FBIOS;FBAV/504.0.0.62.85;FBBV/232680170;FBDV/iPhone10,6;FBMD/iPhone;FBSN/iOS;FBSV/16.6.1;FBSS/3;FBID/phone;FBLC/es_LA;FBOP/5;FBRV/163153784]",
@@ -1317,7 +1316,7 @@ def chick_Salh(phone, pas):
 	}
     response = requests.post(url, data=json.dumps(payload), headers=headers).json()
     response_str = str(response)
-	ppp = random.choice([احمر, اصفر, ازرق, بنفسجي, ابيض, سماوي, برتقالي, ذهبي, وردي])
+    ppp = random.choice([احمر, اصفر, ازرق, بنفسجي, ابيض, سماوي, برتقالي, ذهبي, وردي])
     try:
     	idd = response.get('error', {}).get('error_data', {}).get('uid')
     except:

@@ -1296,7 +1296,7 @@ def u():
 "[FBAN/FBIOS;FBAV/504.0.0.62.85;FBBV/620903684;FBDV/iPhone15,4;FBMD/iPhone;FBSN/iOS;FBSV/16.3.1;FBSS/3;FBID/phone;FBLC/es_LA;FBOP/5;FBRV/439619246]",
 "[FBAN/FBIOS;FBAV/500.0.0.52.98;FBBV/688734853;FBDV/iPhone14,5;FBMD/iPhone;FBSN/iOS;FBSV/18.3.2;FBSS/3;FBID/phone;FBLC/es_LA;FBOP/5;FBRV/682916595]",
 "[FBAN/FBIOS;FBAV/501.0.0.49.107;FBBV/147054806;FBDV/iPhone15,4;FBMD/iPhone;FBSN/iOS;FBSV/16.3.1;FBSS/3;FBID/phone;FBLC/pt_PT;FBOP/5;FBRV/406709814]"])
-    return random.choice(u)
+	return random.choice(u)
 def chick_Salh(phone, pas):
     global hit, bad, CP, cok, apps, dates, apps2, dates2, cookie_string, idd, iddd
     sex = random.choice(["Liger", "METERED", "MOBILE.EDGE", "MOBILE.HSPA", "MOBILE.LTE", "MODERATE"])

